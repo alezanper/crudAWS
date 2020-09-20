@@ -14,4 +14,6 @@ mCrud.create(mItem);
 mKey.setId(12345);
 mCrud.Read(mKey);
 
+mCrud.Update(mKey);
 
+mCrud.Read(mKey);
