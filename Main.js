@@ -4,18 +4,17 @@ var Crud = require("./Crud");
 const table = "Users";
 const mItem = new Item();
 const mCrud = new Crud(table);
-const mKey = new Item();
 
-mItem.setEmail("Juana la cubana");
-mItem.setId(12345);
+mItem.setEmail("juana@gmail.com");
+mItem.setId(26345);
 
-mCrud.create(mItem);
+//mCrud.create(mItem);
 
-mKey.setId(12345);
-mCrud.Read(mKey);
+//mKey.setId(12345);
+console.log(mCrud.Read(mItem));
 
-mCrud.Update(mKey);
+//mCrud.Update(mItem, "email", "my@gmail.com" );
 
-mCrud.Read(mKey);
+//mCrud.Read(mItem);
 
-mCrud.Delete(mKey);
+//mCrud.Delete(mKey);

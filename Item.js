@@ -3,10 +3,14 @@ class Item {
     }
 
     getEmail () { return this.email; }
-    getId() { return this.id; }
+    getId () { return this.id; }
 
-    setEmail (email){ this.email = email; }
-    setId (id){ this.id = id; }
+    setEmail (email) { this.email = email; }
+    setId (id) { this.id = id; }
+
+    getKey () {
+      return {"id": this.id};
+    }
 
   }
 
