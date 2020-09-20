@@ -17,3 +17,5 @@ mCrud.Read(mKey);
 mCrud.Update(mKey);
 
 mCrud.Read(mKey);
+
+mCrud.Delete(mKey);
