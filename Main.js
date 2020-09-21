@@ -8,33 +8,29 @@ const mCrud = new Crud(table);
 mItem.setEmail("juana@gmail.com");
 mItem.setId(26345);
 
-//mCrud.create(mItem);
-
-//mKey.setId(12345);
-//mCrud.Read(mItem);
-
-
-//mCrud.Update(mItem, "email", "my@gmail.com" );
-
-//mCrud.Read(mItem);
-
-//mCrud.Delete(mKey);
-
-
 /*
-mCrud.write(mItem).then(()=>{
-    console.log("Item was wrote")
-}).catch((err)=>{
-    console.error(err);
-});
-*/
-
 mCrud.read(mItem).then((data)=>{
     console.log(data)
 }).catch((err)=>{
     console.error(err);
 });
 
+mCrud.create(mItem).then(()=>{
+    console.log("Item was wrote")
+}).catch((err)=>{
+    console.error(err);
+});
 
+mCrud.update(mItem, "email", "other@gmail.com" ).then(()=>{
+    console.log("item updated");
+}).catch((err)=>{
+    console.error(err);
+});
 
-console.log("other message");
+mCrud.delete(mItem).then(()=>{
+     console.log("item was deleted");
+ }).catch((err)=>{
+     console.error(err);
+ })
+*/
+

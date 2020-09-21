@@ -13,40 +13,21 @@ class Crud {
     };
 
 
-    write(item){
+    create(item){
         var params = {
             TableName:this.table, Item:item
         };        
         return mDB.put(params).promise(); 
-    }
+    };
 
     read(item){
         var params = {
             TableName:this.table, Key:item.getKey()
         };
         return mDB.get(params).promise();
-    }
+    };
 
-    /**
-
-    Read (item){
-        var params = {
-            TableName:this.table, Key:item.getKey()
-        };
-
-
-        mDB.get(params, function(err, data) {
-            if (err) {
-                console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
-            } else {
-                console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
-                this.result = data;
-            }
-        });
-    }
-    */
-
-    Update (item, field, data){
+    update (item, field, data){
         var params = {
             TableName:this.table,
             Key: item.getKey(),
@@ -56,29 +37,15 @@ class Crud {
             }
         };
 
-        mDB.update(params, function(err, data) {
-            if (err) {
-                console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
-            } else {
-                console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
-            }
-        });
+        return mDB.update(params).promise();
+    };
 
-    }
-
-    Delete(item){
+    delete(item){
         var params = {
             TableName:this.table, Key:item.getKey()
         };
 
-        mDB.delete(params, function(err, data) {
-            if (err) {
-                console.error("Unable to delete item. Error JSON:", JSON.stringify(err, null, 2));
-            } else {
-                console.log("DeleteItem succeeded:", JSON.stringify(data, null, 2));
-            }
-        });
-
+        return mDB.delete(params).promise();
     }
 
 }
