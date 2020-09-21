@@ -21,11 +21,20 @@ mItem.setId(26345);
 //mCrud.Delete(mKey);
 
 
-
-mCrud.write(mItem ).then(()=>{
+/*
+mCrud.write(mItem).then(()=>{
     console.log("Item was wrote")
 }).catch((err)=>{
     console.error(err);
 });
+*/
+
+mCrud.read(mItem).then((data)=>{
+    console.log(data)
+}).catch((err)=>{
+    console.error(err);
+});
+
+
 
 console.log("other message");

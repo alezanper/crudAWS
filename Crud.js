@@ -20,6 +20,15 @@ class Crud {
         return mDB.put(params).promise(); 
     }
 
+    read(item){
+        var params = {
+            TableName:this.table, Key:item.getKey()
+        };
+        return mDB.get(params).promise();
+    }
+
+    /**
+
     Read (item){
         var params = {
             TableName:this.table, Key:item.getKey()
@@ -35,6 +44,7 @@ class Crud {
             }
         });
     }
+    */
 
     Update (item, field, data){
         var params = {
